@@ -1,11 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fib(int n){
+long long ara[101];
+
+long long fib(int n){
     if(n <= 2){
         return 1;
     }
-    return fib(n-1) + fib(n-2);
+    if(ara[n] != 0){
+        return ara[n];
+    }
+    ara[n] = fib(n-1) + fib(n-2);
+    return ara[n];
 }
 
 int main() {
